@@ -1,0 +1,14 @@
+# .NET
+**/bin/
+**/obj/
+**/*.user
+
+# Angular
+**/node_modules/
+**/.angular/
+
+# JetBrains
+.idea/
+
+# General
+.DS_Store

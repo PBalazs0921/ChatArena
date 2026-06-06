@@ -1,0 +1,16 @@
+@if (!joined) {
+  <input [(ngModel)]="username" placeholder="Your name" />
+  <input [(ngModel)]="roomName" placeholder="Room name" />
+  <button (click)="joinRoom()">Join</button>
+}
+
+@if (joined) {
+  @for (msg of messages; track msg) {
+    <div>
+      <strong>{{ msg.user }}:</strong> {{ msg.text }}
+    </div>
+  }
+
+  <input [(ngModel)]="messageText" placeholder="Message" />
+  <button (click)="sendMessage()">Send</button>
+}
