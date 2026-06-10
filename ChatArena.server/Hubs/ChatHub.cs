@@ -16,4 +16,16 @@ public class ChatHub : Hub
         await Clients.Group(roomName)
             .SendAsync("ReceiveMessage", user, message);
     }
+    
+    public async Task StartTyping(string roomName, string username)
+    {
+        await Clients.OthersInGroup(roomName)
+            .SendAsync("UserTyping", username);
+    }
+
+    public async Task StopTyping(string roomName, string username)
+    {
+        await Clients.OthersInGroup(roomName)
+            .SendAsync("UserStoppedTyping", username);
+    }
 }
