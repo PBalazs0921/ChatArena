@@ -9,7 +9,11 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("http://localhost:4200", "http://localhost:5173", "http://localhost:5174")
+        policy.WithOrigins(
+                "http://localhost:5173",
+                "http://localhost:5174",
+                "https://thankful-ground-021672803.7.azurestaticapps.net"
+            )
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();

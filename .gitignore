@@ -14,3 +14,9 @@
 .DS_Store
 **/.vscode/
 ChatArena.server/publish/
+
+# Environment files
+.env
+.env.local
+.env*.local
+ChatArena.client/.env.production

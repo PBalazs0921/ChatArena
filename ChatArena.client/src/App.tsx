@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     const connection = new signalR.HubConnectionBuilder()
-      .withUrl("http://localhost:5196/chathub")
+      .withUrl(import.meta.env.VITE_HUB_URL)
       .withAutomaticReconnect()
       .build();
 
@@ -88,6 +88,9 @@ function App() {
   if (!joined) {
     return (
       <div>
+        <div style={{ fontSize: "12px", color: "gray" }}>
+          HUB URL: {import.meta.env.VITE_HUB_URL ?? "NOT SET"}
+        </div>
         <input
           value={username}
           onChange={(e) => setUsername(e.target.value)}
